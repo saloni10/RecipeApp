@@ -1,0 +1,124 @@
+<html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reg</title>
+        <script src="/home/saloni/recipes/allrecipes/static/js/sweet-alert.min.js"></script>
+        <script src="/home/saloni/recipes/allrecipes/static/js/sweet-alert.js"></script>
+        <link rel="stylesheet" href="/home/saloni/recipes/allrecipes/static/js/sweet-alert.css">
+        
+        <style>
+        @font-face { font-family : "AlexBrush"; src: url("{{STATIC_URL}}fonts/AlexBrush-Regular.ttf"); }
+        body{ background-color:#FFF8DC;  
+         background-repeat: no-repeat; background-size: 100% 100%;}
+         
+        .gallery {border: solid 2.5px green;  width:380px; height:300px;  }
+            .fl { color: magenta; font-family: "AlexBrush","gentium"; margin-top:2%; font-size: 52px; }
+            .title { margin-top : 2%; }
+        .sl { color: #080099 ; font-family: "AlexBrush","gentium"; margin-top:2%; font-size: 52px; }
+        h1{ margin-top:3%;color:green; margin-left:34%; font-family: "AlexBrush"; font-size:50px;}
+        .by {font-family: "AlexBrush"; color: #080099; text-align :center; font-size:17px; margin-left:16%;}
+        .link {text-decoration: none;}
+        .gall { background-image: url("{{STATIC_URL}}allrecipes/r.jpg");background-size: 200px 305px; background-repeat: no-repeat;
+         background-origin:border-box;  width:385; height:305;margin-left:34%; background-attachment:fixed; display:inline-block; }
+        .side { float:right; margin-right:8%; margin-top:0%;}
+        .text1 {color: magenta; font-weight: bold;}
+        .text2 { color: #080099; font-weight: bold;}
+        .text3 {color : green; font-weight: bold;}
+        .text4 {color: #c0392b; font-weight: bold;}
+           .button
+{
+font-weight: bold;
+font-family: sans-serif;
+border:none;
+height: 25px;
+width: 10%;
+background-color: #1abc9c;
+color:#ffffff;
+border:1px;
+border-radius:10px;
+}
+.link:hover{
+color:#3498db;
+}
+.button:hover
+{
+background-color:#3498db;
+}
+        
+        .b1 { margin-top:0%;margin-left: 30%;background-color: #e74c3c ; }
+.b2 {  background-color: #9b59b6 ; }
+.b3 { background-color: #34495e ; }
+.b { margin-left:34%;font-weight: bold;
+font-family: sans-serif;
+border:none;
+height: 25px;
+width: 100px;
+background-color: #1abc9c;
+color:#ffffff;
+border:1px;
+border-radius:0 10px 0 0; }
+a { text-decoration: none; }
+.nav {
+margin-top: 0%;
+}
+ 
+        .submit { color : #CA2F2F; }
+        .submit
+            {
+            font-weight: bold;
+            font-family: sans-serif;
+            border:none;
+            height: 25px;
+            width: 11%;
+            background-color: #1abc9c;
+            color:#ffffff;
+            border:1px;
+            border-radius:10px;
+                }
+        .link:hover{
+                color:#3498db;
+                    }
+.submit:hover
+{
+background-color:#3498db;
+}
+        
+          #wrapper h1 {margin-top:12%;margin-left:34%; font-family: "AlexBrush";}
+        </style>
+        </style>
+        
+    </head>
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/style.css" />
+
+    <body>
+  
+    <div class="title">
+    <h1> <span class="sl">A &nbsp;</span><span class="fl"> S</span>lice &nbsp; of &nbsp; <span class="sl"> H</span>eaven </br><span class = "by"><a class = "link" href="https://www.salonibaweja10.wordpress.com">By Saloni Baweja  &  Shailza Jolly </a> </span></h1> </br></br> </br>
+    </div>
+    
+    <div class="nav">
+   <a class= "url2" href="/recipes/submission/"> <input class= "button b1" type="submit" value="Home"/>   </a> 
+ <a class="url3" href="/recipes/profile/"> <input class= "button b2" type="submit" value="Profile"/>  </a>
+ <a class="url3" href="/recipes/changepwd/"> <input class= "submit" type="submit" value="Change Password"/>  </a>
+ <a class="url3" href="/recipes/logout/"> <input class= "button b3" type="submit" value="Logout"/>  </a>
+  
+ </div>
+    <div id="wrapper" class="animate form">
+        <h1>Change Your Password !</h1> 
+<body>
+  {% ifequal changed "wrong" %}
+<h4 style = "color :red" > Enter Correct password </h4>
+
+{% endifequal  %}
+<form action="/recipes/changepassword/" method="POST">
+   {% csrf_token %}
+<input type="password" placeholder="old passsword" name="opwd"><br/>
+<input type="password" placeholder="new password" name="npwd"><br/>
+
+<input class= "submit" type="submit" value="change">
+</form>
+</body>
+</html> 
+
+

@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title> Recipe You Desire ! </title>
+	</head>
+
+	<style>
+		@font-face { font-family : "AlexBrush"; src: url("{{STATIC_URL}}fonts/AlexBrush-Regular.ttf"); }
+		.main{  width:45%; border: solid; position:relative; }
+		.fl { color: magenta; font-family: "AlexBrush","gentium"; margin-top:2%; font-size: 52px; }
+		.sl { color: #080099 ; font-family: "AlexBrush","gentium"; margin-top:2%; font-size: 52px; }
+		.head{ color:green; font-family: "AlexBrush"; font-size:50px;}
+		.by {font-family: "AlexBrush"; color: #080099; text-align :center; font-size:18px; }
+		body{background-color: #FFF8DC; }
+		h2{ color:#0000FF;}
+		h3{ margin-left: 0;}
+		.ing{text-align:left; margin-left:40%;}
+		.main.img{float:right;}
+		.proc {  margin-left:0%;}
+	</style>
+
+	<body>
+		<center>
+			<h2 class="head">
+				<span class="sl">A &nbsp;</span><span class="fl"> S</span>lice &nbsp; of &nbsp; <span class="sl"> H</span>eaven</br> <span class = "by">                                 Serves You</span> 
+			</h2> 
+
+			<div class = "main">
+				{% for val in obj %} 
+				<h2> {{val.name.name}} </h2>
+				</br> 
+				<div class="img">
+				<img src="{{MEDIA_URL}}{{val.image}}"/>
+				</div>
+				<div class="ing">
+				<h3>Ingredients</h3>
+				<p class="ing">{{val.name.ingredients|escape|linebreaks|ljust:"10"}}</p>
+				</br> </br></div>
+				<div class="proc">
+				<h3> Procedure</h3>
+				<p> {{val.name.steps|linebreaks}}</p>
+				{% endfor %}</div>
+			</div>
+		</center>
+	</body>
+</html>

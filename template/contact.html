@@ -1,0 +1,78 @@
+<!Doctype HTML>
+<HTML>
+   <HEAD>
+	<TITLE>Contact us</TITLE>
+	<style>
+	@import url('http://fonts.googleapis.com/css?family=Lato');
+body
+{
+background-image: url("{{STATIC_URL}}allrecipes/2014-04-Black-Abstract-Floral-Background-Wallpaper.jpg");
+font-family:Lato;
+background-color: black;
+}
+.form-container
+{
+background-position: 10%;
+position: absolute;
+text-align: center;
+top: 10%;
+background-color: #ffffff;
+left: 36%;
+right: 35%;
+background-color:#fafafa;
+}
+p
+{
+display:block;
+}
+.contact-message
+{
+padding: 10px 1px 10px 19px;
+width:80%;
+height:200px;
+border:none;
+background-color:#ffffff;
+border:1px;
+border-radius:10px;
+}
+.contact-submit
+{
+font-weight: bold;
+font-family: sans-serif;
+border:none;
+height: 50px;
+width: 80%;
+background-color: #1abc9c;
+color:#ffffff;
+border:1px;
+border-radius:10px;
+}
+
+.contact-submit:hover
+{
+background-color:#9b59b6;
+}
+
+.contact-name,.contact-email
+{
+padding:10px 1px 10px 19px;
+height:30px;
+width:80%;
+background-color:#ffffff;
+border:none;
+border:1px;
+border-radius:10px;
+}
+    </style>
+   </HEAD>
+	<BODY>
+	   <div class=form-container>
+	   <H1> Help Us Improve!</H1>
+	   <form name='contact' method="post" action="mailto:salonibaweja10@gmail.com">
+	    <p >{{contact_form.as_p}}<br></p>
+	    {% csrf_token %}
+	  <p> <input type='submit' value='SUBMIT' name='submit' class='contact-submit' ></p>
+	   </form>
+	  </div>
+	</BODY>
+</HTML>

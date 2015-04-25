@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <title> EXPLORE YOUR TASTE ! </title>
+   <!-- <style>
+    @-webkit-font-face {
+          font-family : "new";
+          src: url('fonts/AlexBrush-Regular.ttf'); }
+     .gallery { margin-left: 20px;} 
+     .fl { color: #9F000F; font-family: "new";}
+    </style>
+  </head>
+  <body>
+    <h1> <span class="fl">S</span>lice of <span class="sl">H</span>eaven 
+    <div class="gallery" >
+     {% load staticfiles %}    
+     <img  src="{{STATIC_URL}}allrecipes/images(8).jpg" alt = "first"  width = 300px height=250px />
+     <img  src="{{STATIC_URL}}allrecipes/images(15).jpg" alt = "first"  width = 300px height=250px />
+     <img  src="{{STATIC_URL}}allrecipes/images(13).jpg" alt = "first"  width = 300px height=250px />
+     <img  src="{{STATIC_URL}}allrecipes/images(14).jpg" alt = "first"  width = 350px height=250px />
+    </div> -->
+
+  <script type="text/javascript">
+<!--
+//preload images
+var image1=new Image()
+image1.src="{{STATIC_URL}}allrecipes/images(8).jpg"
+var image2=new Image()
+image2.src="{{STATIC_URL}}allrecipes/images(15).jpg"
+image2.width="400px"
+var image3=new Image()
+image3.src="{{STATIC_URL}}allrecipes/images(13).jpg"
+var image4=new Image()
+image4.src="{{STATIC_URL}}allrecipes/images(14).jpg"
+var image5=new Image()
+image5.src="{{STATIC_URL}}allrecipes/images(17).jpg"
+//-->
+</script>
+<style>
+@font-face { font-family : "AlexBrush"; src: url("{{STATIC_URL}}fonts/AlexBrush-Regular.ttf"); }
+body{ background-color:#FFF8DC;  background-image: url("{{STATIC_URL}}allrecipes/2013-11-Beautiful-Floral-Backgrounds.jpg");
+background-attachment:fixed; background-repeat: no-repeat; background-size: 100% 100%;}
+.gallery {border: solid 2.5px green;  width:380px; height:300px;  }
+.fl { color: magenta; font-family: "AlexBrush","gentium"; margin-top:2%; font-size: 52px; }
+.title { margin-top : 2%; }
+.sl { color: #080099 ; font-family: "AlexBrush","gentium"; margin-top:2%; font-size: 52px; }
+h1{ margin-top:3%;color:green; margin-left:34%; font-family: "AlexBrush"; font-size:50px;}
+.by {font-family: "AlexBrush"; color: #080099; text-align :center; font-size:17px; margin-left:16%;}
+.link {text-decoration: none;}
+.gall { background-image: url("{{STATIC_URL}}allrecipes/r.jpg");background-size: 200px 305px; background-repeat: no-repeat;
+ background-origin:border-box;  width:385; height:305;margin-left:34%; background-attachment:fixed; display:inline-block; }
+.side { float:right; margin-right:8%; margin-top:0%;}
+.text1 {color: magenta; font-weight: bold;}
+.text2 { color: #080099; font-weight: bold;}
+.text3 {color : green; font-weight: bold;}
+.text4 {color: #c0392b; font-weight: bold;}
+.button
+{
+font-weight: bold;
+font-family: sans-serif;
+border:none;
+height: 25px;
+width: 50%;
+background-color: #1abc9c;
+color:#ffffff;
+border:1px;
+border-radius:10px;
+}
+.link:hover{
+color:#3498db;
+}
+.button:hover
+{
+background-color:#3498db;
+}
+.b1 { background-color: #e74c3c ; }
+.b2 { background-color: #9b59b6 ; }
+.b3 { background-color: #34495e ; }
+.b { margin-left:34%;font-weight: bold;
+ 
+font-family: sans-serif;
+border:none;
+height: 25px;
+width: 100px;
+background-color: #1abc9c;
+color:#ffffff;
+border:1px;
+border-radius:0 10px 0 0; }
+a { text-decoration: none; }
+.login:hover { 
+</style>
+</head>
+<body>
+<div class="title">
+<h1> <span class="sl">A &nbsp;</span><span class="fl"> S</span>lice &nbsp; of &nbsp; <span class="sl"> H</span>eaven </br> <span class = "by"><a class = "link" href="https://www.salonibaweja10.wordpress.com"> By Saloni Baweja  &  Shailza Jolly </a> </span></h1> 
+
+</div>
+<a href="javascript:slidelink()">
+<a href="/recipes/about/"> <input class = "b" type = "submit" value = "Know Us"/></a>
+<div class="gall"><img src="{{STATIC_URL}}allrecipes/images(8).jpg" class="gallery" name="slide" /></a> </div>
+
+<script type="text/javascript">
+<!--
+var step=1
+var whichimage=1
+function slideit(){
+if (!document.images)
+return
+document.images.slide.src=eval("image"+step+".src")
+
+whichimage=step
+if (step<5)
+step++
+else
+step=1
+setTimeout("slideit()",1800)
+}
+slideit()
+function slidelink(){
+if (whichimage==1)
+window.location="link1.htm"
+else if (whichimage==2)
+window.location="link2.htm"
+else if (whichimage==3)
+window.location="link3.htm"
+else if (whichimage==4)
+window.location="link4.htm"
+else if (whichimage==5)
+window.location="link5.htm"
+}
+//-->
+</script>
+
+<div class="side">
+<p class="text1"> Search Your Taste : </p>
+<form action="/recipes/search/" method="get">
+<p class="textf"> <input name="recipe" type="text" placeholder=" Enter Recipe Name" ></p>
+<p > <input class= "button" type="submit" value="Search"/>  </p></form> <br>
+<p class= "text2"> Want To See Your Own Recipe Here ? </p> <p > <a class="url1" href = "/recipes/register"> <input class= "button b1" type="submit" value="Sign Up"/> </a> <a class="login" href="/recipes/login">Already a member ?</a>
+</br> <br>
+<p class= "text3"> Your Feedback is Valuable !<p > <a class= "url2" href="/recipes/contact_us"><input class= "button b2" type="submit" value="Tell Us"/>   </a> </br> <br>
+<p class="text4"> Want Some Tips ? <p > <a class="url3" href=" /recipes/tips"> <input class= "button b3" type="submit" value="Learn"/>  </a> </p> </div>
+</body>
+</html>
+
